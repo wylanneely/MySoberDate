@@ -22,7 +22,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Item 2-->
+        <!--Settings-->
         <scene sceneID="ZS6-hr-RYq">
             <objects>
                 <viewController id="O6R-Ky-nub" customClass="SettingsViewController" customModule="MySoberDate" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,20 +30,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3L-jg-BUk">
-                                <rect key="frame" x="10" y="250" width="373" height="500"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="SXY-XD-N8h"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sober Date :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmF-4C-VdX">
+                                <rect key="frame" x="126.66666666666669" y="542" width="140" height="33"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zGM-Hw-lgj">
+                                <rect key="frame" x="20" y="318" width="353" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-962632800">
+                                    <!--1970-07-01 10:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerSelected:" destination="O6R-Ky-nub" eventType="valueChanged" id="xhU-Nb-M1t"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fn8-6w-bBl">
+                                <rect key="frame" x="20" y="583" width="353" height="38"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="27"/>
+                                <color key="textColor" systemColor="tableBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6z-AI-ekQ">
-                                <rect key="frame" x="16.666666666666657" y="79" width="360" height="102"/>
+                                <rect key="frame" x="16.666666666666657" y="176" width="360" height="102"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moneyBackgroundShades" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVl-MZ-qAJ">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="102"/>
@@ -99,46 +110,36 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sober Date :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmF-4C-VdX">
-                                <rect key="frame" x="56.666666666666657" y="201" width="140" height="33"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Feb. 24, 2024" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsn-gH-4ya">
-                                <rect key="frame" x="196.66666666666663" y="201" width="180.33333333333337" height="33"/>
-                                <color key="textColor" systemColor="tableBackgroundColor"/>
-                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EMw-AR-2hf"/>
                         <color key="backgroundColor" red="0.082060538229999994" green="0.087445892390000002" blue="0.14656019209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nsn-gH-4ya" firstAttribute="centerY" secondItem="VmF-4C-VdX" secondAttribute="centerY" id="B23-GI-t6l"/>
-                            <constraint firstItem="a3L-jg-BUk" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="GeU-1X-F9B"/>
-                            <constraint firstItem="nsn-gH-4ya" firstAttribute="leading" secondItem="VmF-4C-VdX" secondAttribute="trailing" id="ICp-bn-oTr"/>
-                            <constraint firstItem="VmF-4C-VdX" firstAttribute="top" secondItem="i6z-AI-ekQ" secondAttribute="bottom" constant="20" id="JtM-9x-RXs"/>
-                            <constraint firstItem="a3L-jg-BUk" firstAttribute="top" secondItem="nsn-gH-4ya" secondAttribute="bottom" constant="16" id="KFQ-ZK-3X0"/>
-                            <constraint firstItem="EMw-AR-2hf" firstAttribute="trailing" secondItem="nsn-gH-4ya" secondAttribute="trailing" constant="16" id="OLh-z6-ZA1"/>
-                            <constraint firstItem="VmF-4C-VdX" firstAttribute="trailing" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="W73-dL-fxe"/>
-                            <constraint firstItem="EMw-AR-2hf" firstAttribute="trailing" secondItem="a3L-jg-BUk" secondAttribute="trailing" constant="10" id="YoT-LV-S0p"/>
-                            <constraint firstItem="i6z-AI-ekQ" firstAttribute="top" secondItem="EMw-AR-2hf" secondAttribute="top" constant="20" id="aNe-Y5-tAE"/>
-                            <constraint firstItem="a3L-jg-BUk" firstAttribute="leading" secondItem="EMw-AR-2hf" secondAttribute="leading" constant="10" id="e2b-K8-qw6"/>
+                            <constraint firstItem="zGM-Hw-lgj" firstAttribute="top" secondItem="i6z-AI-ekQ" secondAttribute="bottom" constant="40" id="0jM-W0-WSz"/>
+                            <constraint firstItem="Fn8-6w-bBl" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="E22-tb-LhH"/>
+                            <constraint firstItem="Fn8-6w-bBl" firstAttribute="leading" secondItem="EMw-AR-2hf" secondAttribute="leading" constant="20" id="Egf-Em-R2b"/>
+                            <constraint firstItem="VmF-4C-VdX" firstAttribute="top" secondItem="zGM-Hw-lgj" secondAttribute="bottom" constant="8" symbolic="YES" id="T30-rw-sdU"/>
+                            <constraint firstItem="zGM-Hw-lgj" firstAttribute="centerY" secondItem="Hvh-3j-mNQ" secondAttribute="centerY" id="TzM-TX-kuR"/>
+                            <constraint firstItem="Fn8-6w-bBl" firstAttribute="top" secondItem="VmF-4C-VdX" secondAttribute="bottom" constant="8" symbolic="YES" id="VHl-iS-ZLg"/>
+                            <constraint firstItem="VmF-4C-VdX" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="W73-dL-fxe"/>
+                            <constraint firstItem="zGM-Hw-lgj" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="Yxx-yz-nmI"/>
+                            <constraint firstItem="zGM-Hw-lgj" firstAttribute="leading" secondItem="EMw-AR-2hf" secondAttribute="leading" constant="20" id="eUX-r7-bxJ"/>
+                            <constraint firstItem="EMw-AR-2hf" firstAttribute="trailing" secondItem="Fn8-6w-bBl" secondAttribute="trailing" constant="20" id="fGH-bT-nL3"/>
+                            <constraint firstItem="EMw-AR-2hf" firstAttribute="trailing" secondItem="zGM-Hw-lgj" secondAttribute="trailing" constant="20" id="mtb-QZ-z8n"/>
                             <constraint firstItem="i6z-AI-ekQ" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="qf4-kP-LtF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="DIu-fj-2Vk"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="slider.horizontal.3" catalog="system" id="DIu-fj-2Vk"/>
                     <connections>
-                        <outlet property="calendarContainerView" destination="a3L-jg-BUk" id="yv5-NX-M21"/>
-                        <outlet property="dateTextField" destination="nsn-gH-4ya" id="8Sx-wE-byt"/>
+                        <outlet property="dailyDollarTextField" destination="bLz-64-yA6" id="A8E-gU-lFd"/>
+                        <outlet property="soberDateLabel" destination="Fn8-6w-bBl" id="Sg7-hv-Mid"/>
+                        <outlet property="soberDatePicker" destination="zGM-Hw-lgj" id="XLB-9G-iAg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Im7-54-bKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1574.8091603053435" y="-1.4084507042253522"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="8Qv-fi-m9a">
             <objects>
                 <viewController id="Fdd-Fs-wXU" sceneMemberID="viewController">
@@ -259,7 +260,7 @@
                             <constraint firstItem="I24-Ta-fkt" firstAttribute="centerX" secondItem="kYk-vH-wZV" secondAttribute="centerX" id="ho7-Aq-LrY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="o3L-Bb-5w1"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="sun.horizon.fill" catalog="system" id="o3L-Bb-5w1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3l-U0-Sbd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -287,11 +288,10 @@
     <resources>
         <image name="DayCounterBackground" width="144" height="183.66667175292969"/>
         <image name="moneyBackgroundShades" width="263" height="60.333332061767578"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
+        <image name="sun.horizon.fill" catalog="system" width="128" height="79"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
