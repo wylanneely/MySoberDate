@@ -17,7 +17,7 @@
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
         </array>
-        <array key="Poppins-SemiBold.ttf">
+        <array key="Poppins-SemiBold.otf">
             <string>Poppins-SemiBold</string>
         </array>
     </customFonts>
@@ -25,17 +25,25 @@
         <!--Settings-->
         <scene sceneID="ZS6-hr-RYq">
             <objects>
-                <viewController id="O6R-Ky-nub" customClass="SettingsViewController" customModule="MySoberDate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O6R-Ky-nub" customClass="SettingsViewController" customModule="MySoberDate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hvh-3j-mNQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sober Date :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmF-4C-VdX">
-                                <rect key="frame" x="126.66666666666669" y="542" width="140" height="33"/>
+                                <rect key="frame" x="126.66666666666667" y="542" width="139.66666666666663" height="32.333333333333371"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendarBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4oh-Kg-hwU">
+                                <rect key="frame" x="20" y="318" width="353" height="216"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <datePicker contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zGM-Hw-lgj">
                                 <rect key="frame" x="20" y="318" width="353" height="216"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,12 +51,17 @@
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="-962632800">
                                     <!--1970-07-01 10:00:00 +0000-->
                                 </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="datePickerSelected:" destination="O6R-Ky-nub" eventType="valueChanged" id="xhU-Nb-M1t"/>
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fn8-6w-bBl">
-                                <rect key="frame" x="20" y="583" width="353" height="38"/>
+                                <rect key="frame" x="20" y="582.33333333333337" width="353" height="38"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="27"/>
                                 <color key="textColor" systemColor="tableBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -65,14 +78,17 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLz-64-yA6">
-                                        <rect key="frame" x="156" y="49.666666666666657" width="48" height="52"/>
+                                        <rect key="frame" x="156" y="50" width="48" height="51.666666666666657"/>
                                         <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                        <connections>
+                                            <action selector="dollarTextChanged:" destination="O6R-Ky-nub" eventType="editingDidEnd" id="PH2-Di-LMe"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mV5-ZL-Qan">
-                                        <rect key="frame" x="129.66666666666669" y="57.333333333333343" width="18" height="37"/>
+                                        <rect key="frame" x="130.33333333333334" y="57.666666666666657" width="17.333333333333343" height="36.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="26"/>
                                         <color key="textColor" systemColor="tableBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -110,27 +126,63 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveButtonBackgroun" translatesAutoresizingMaskIntoConstraints="NO" id="Ux2-Mx-Xx3">
+                                <rect key="frame" x="116.66666666666669" y="660.33333333333337" width="160" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="9uH-3n-ASb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwL-5E-23C">
+                                <rect key="frame" x="116.66666666666669" y="660.33333333333337" width="160" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                    <fontDescription key="titleFontDescription" name="Poppins-Medium" family="Poppins" pointSize="22"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveUpdateButtonTapped:" destination="O6R-Ky-nub" eventType="touchUpInside" id="9qe-X3-aZw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EMw-AR-2hf"/>
                         <color key="backgroundColor" red="0.082060538229999994" green="0.087445892390000002" blue="0.14656019209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zGM-Hw-lgj" firstAttribute="top" secondItem="i6z-AI-ekQ" secondAttribute="bottom" constant="40" id="0jM-W0-WSz"/>
+                            <constraint firstItem="ZwL-5E-23C" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="66t-6o-kNa"/>
+                            <constraint firstItem="4oh-Kg-hwU" firstAttribute="bottom" secondItem="zGM-Hw-lgj" secondAttribute="bottom" id="DOq-xY-XmX"/>
                             <constraint firstItem="Fn8-6w-bBl" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="E22-tb-LhH"/>
                             <constraint firstItem="Fn8-6w-bBl" firstAttribute="leading" secondItem="EMw-AR-2hf" secondAttribute="leading" constant="20" id="Egf-Em-R2b"/>
+                            <constraint firstItem="4oh-Kg-hwU" firstAttribute="leading" secondItem="zGM-Hw-lgj" secondAttribute="leading" id="GiC-Ic-rvi"/>
+                            <constraint firstItem="4oh-Kg-hwU" firstAttribute="top" secondItem="zGM-Hw-lgj" secondAttribute="top" id="KMr-sK-fxe"/>
+                            <constraint firstItem="ZwL-5E-23C" firstAttribute="bottom" secondItem="Ux2-Mx-Xx3" secondAttribute="bottom" id="Qis-nl-pI9"/>
                             <constraint firstItem="VmF-4C-VdX" firstAttribute="top" secondItem="zGM-Hw-lgj" secondAttribute="bottom" constant="8" symbolic="YES" id="T30-rw-sdU"/>
                             <constraint firstItem="zGM-Hw-lgj" firstAttribute="centerY" secondItem="Hvh-3j-mNQ" secondAttribute="centerY" id="TzM-TX-kuR"/>
+                            <constraint firstItem="ZwL-5E-23C" firstAttribute="top" secondItem="Ux2-Mx-Xx3" secondAttribute="top" id="UNk-k0-eRj"/>
                             <constraint firstItem="Fn8-6w-bBl" firstAttribute="top" secondItem="VmF-4C-VdX" secondAttribute="bottom" constant="8" symbolic="YES" id="VHl-iS-ZLg"/>
                             <constraint firstItem="VmF-4C-VdX" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="W73-dL-fxe"/>
                             <constraint firstItem="zGM-Hw-lgj" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="Yxx-yz-nmI"/>
+                            <constraint firstItem="ZwL-5E-23C" firstAttribute="leading" secondItem="Ux2-Mx-Xx3" secondAttribute="leading" id="Zsj-Mc-X51"/>
                             <constraint firstItem="zGM-Hw-lgj" firstAttribute="leading" secondItem="EMw-AR-2hf" secondAttribute="leading" constant="20" id="eUX-r7-bxJ"/>
                             <constraint firstItem="EMw-AR-2hf" firstAttribute="trailing" secondItem="Fn8-6w-bBl" secondAttribute="trailing" constant="20" id="fGH-bT-nL3"/>
+                            <constraint firstItem="4oh-Kg-hwU" firstAttribute="trailing" secondItem="zGM-Hw-lgj" secondAttribute="trailing" id="fqz-uP-lrs"/>
+                            <constraint firstItem="Ux2-Mx-Xx3" firstAttribute="top" secondItem="Fn8-6w-bBl" secondAttribute="bottom" constant="40" id="gI7-v0-FDJ"/>
                             <constraint firstItem="EMw-AR-2hf" firstAttribute="trailing" secondItem="zGM-Hw-lgj" secondAttribute="trailing" constant="20" id="mtb-QZ-z8n"/>
                             <constraint firstItem="i6z-AI-ekQ" firstAttribute="centerX" secondItem="Hvh-3j-mNQ" secondAttribute="centerX" id="qf4-kP-LtF"/>
+                            <constraint firstItem="ZwL-5E-23C" firstAttribute="trailing" secondItem="Ux2-Mx-Xx3" secondAttribute="trailing" id="vS3-4F-GUu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="slider.horizontal.3" catalog="system" id="DIu-fj-2Vk"/>
+                    <navigationItem key="navigationItem" id="lkj-zo-JVI"/>
                     <connections>
+                        <outlet property="buttomImageView" destination="Ux2-Mx-Xx3" id="XM3-IR-KO9"/>
                         <outlet property="dailyDollarTextField" destination="bLz-64-yA6" id="A8E-gU-lFd"/>
+                        <outlet property="saveUpdateButton" destination="ZwL-5E-23C" id="ILU-r7-xNP"/>
                         <outlet property="soberDateLabel" destination="Fn8-6w-bBl" id="Sg7-hv-Mid"/>
                         <outlet property="soberDatePicker" destination="zGM-Hw-lgj" id="XLB-9G-iAg"/>
                     </connections>
@@ -142,7 +194,7 @@
         <!--Home-->
         <scene sceneID="8Qv-fi-m9a">
             <objects>
-                <viewController id="Fdd-Fs-wXU" sceneMemberID="viewController">
+                <viewController id="Fdd-Fs-wXU" customClass="HomeViewController" customModule="MySoberDate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kYk-vH-wZV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,8 +210,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jx-Ee-2gC">
-                                        <rect key="frame" x="121.66666666666666" y="144" width="118" height="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jx-Ee-2gC">
+                                        <rect key="frame" x="150" y="144" width="61.333333333333343" height="42"/>
                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="30"/>
                                         <color key="textColor" systemColor="systemGray6Color"/>
                                         <nil key="highlightedColor"/>
@@ -185,8 +237,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TVZ-8g-EEf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="23"/>
+                                <color key="textColor" systemColor="systemGray6Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70q-Ue-EcH">
@@ -200,7 +252,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,420" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLS-HX-kdx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLS-HX-kdx">
                                         <rect key="frame" x="114" y="61" width="133" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="133" id="Lud-vq-SaO"/>
@@ -210,8 +262,8 @@
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M o n e y    S a v e d  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2n-kW-DWK">
-                                        <rect key="frame" x="14" y="0.0" width="333" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M o n e y    S a v e d  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2n-kW-DWK">
+                                        <rect key="frame" x="15" y="0.0" width="331.33333333333331" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="Ixr-Gf-nuI"/>
                                         </constraints>
@@ -223,8 +275,6 @@
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstItem="xne-BT-O2v" firstAttribute="centerX" secondItem="E2n-kW-DWK" secondAttribute="centerX" id="Hac-4F-KyF"/>
-                                    <constraint firstItem="E2n-kW-DWK" firstAttribute="leading" secondItem="70q-Ue-EcH" secondAttribute="leading" constant="14" id="RBV-iv-BEu"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E2n-kW-DWK" secondAttribute="trailing" id="V2G-tG-kcE"/>
                                     <constraint firstAttribute="height" constant="102" id="Vj4-Ak-yul"/>
                                     <constraint firstItem="xne-BT-O2v" firstAttribute="bottom" secondItem="NLS-HX-kdx" secondAttribute="bottom" id="WhQ-Pr-aeB"/>
                                     <constraint firstItem="E2n-kW-DWK" firstAttribute="top" secondItem="70q-Ue-EcH" secondAttribute="top" id="bTf-Y6-BNs"/>
@@ -242,6 +292,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-uG-GkY">
+                                <rect key="frame" x="234" y="734" width="143" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrow.down.app.fill" catalog="system" title="Setup Dates">
+                                    <color key="baseBackgroundColor" red="0.95508700609999997" green="0.08027390391" blue="0.2690021098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="21s-3X-crI"/>
                         <color key="backgroundColor" red="0.082060538229999994" green="0.087445892390000002" blue="0.14656019209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -251,6 +308,7 @@
                             <constraint firstItem="yOW-Tc-Ick" firstAttribute="top" secondItem="I24-Ta-fkt" secondAttribute="bottom" constant="8" symbolic="YES" id="F0W-yw-CSp"/>
                             <constraint firstItem="yOW-Tc-Ick" firstAttribute="trailing" secondItem="70q-Ue-EcH" secondAttribute="trailing" id="IeW-IH-dY1"/>
                             <constraint firstItem="yOW-Tc-Ick" firstAttribute="leading" secondItem="70q-Ue-EcH" secondAttribute="leading" id="Off-4k-e7P"/>
+                            <constraint firstItem="21s-3X-crI" firstAttribute="trailing" secondItem="VdK-uG-GkY" secondAttribute="trailing" constant="16" id="PCx-Ic-val"/>
                             <constraint firstItem="70q-Ue-EcH" firstAttribute="centerX" secondItem="kYk-vH-wZV" secondAttribute="centerX" id="ULg-Vc-Lqx"/>
                             <constraint firstAttribute="bottom" secondItem="yOW-Tc-Ick" secondAttribute="bottom" constant="349" id="Vx3-jW-8C4"/>
                             <constraint firstItem="21s-3X-crI" firstAttribute="trailing" secondItem="I24-Ta-fkt" secondAttribute="trailing" constant="60" id="YnM-12-Qac"/>
@@ -258,9 +316,16 @@
                             <constraint firstItem="I24-Ta-fkt" firstAttribute="leading" secondItem="21s-3X-crI" secondAttribute="leading" constant="60" id="bSz-ib-NIM"/>
                             <constraint firstItem="yOW-Tc-Ick" firstAttribute="top" secondItem="kYk-vH-wZV" secondAttribute="top" constant="173" id="c4K-If-Zx0"/>
                             <constraint firstItem="I24-Ta-fkt" firstAttribute="centerX" secondItem="kYk-vH-wZV" secondAttribute="centerX" id="ho7-Aq-LrY"/>
+                            <constraint firstItem="VdK-uG-GkY" firstAttribute="bottom" secondItem="21s-3X-crI" secondAttribute="bottom" id="lAy-Sf-HZc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="sun.horizon.fill" catalog="system" id="o3L-Bb-5w1"/>
+                    <connections>
+                        <outlet property="imageView" destination="tb6-kw-42G" id="EjE-Zi-hZj"/>
+                        <outlet property="moneySavedLabel" destination="NLS-HX-kdx" id="dfb-Ik-wIg"/>
+                        <outlet property="setUpButton" destination="VdK-uG-GkY" id="7ol-Oe-P6Z"/>
+                        <outlet property="soberTimeLabel" destination="8jx-Ee-2gC" id="Vaq-rf-BCd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3l-U0-Sbd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,31 +347,34 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56w-ey-lb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="207" y="-399"/>
+            <point key="canvasLocation" x="321" y="-539"/>
         </scene>
     </scenes>
     <resources>
         <image name="DayCounterBackground" width="144" height="183.66667175292969"/>
+        <image name="arrow.down.app.fill" catalog="system" width="128" height="114"/>
+        <image name="calendarBackground" width="120" height="120.33333587646484"/>
         <image name="moneyBackgroundShades" width="263" height="60.333332061767578"/>
+        <image name="saveButtonBackgroun" width="54.666667938232422" height="14"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
         <image name="sun.horizon.fill" catalog="system" width="128" height="79"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
