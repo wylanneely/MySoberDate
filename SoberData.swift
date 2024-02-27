@@ -26,12 +26,15 @@ class SoberData {
     
     func calculateMoneySaved()->Int{
         
-        return 10
+        let days = returnDaysSober()
         
+        return (dailyDollarAmount * days)
     }
     
     func returnDaysSober()->Int{
-        return 100
+        let calendar = Calendar.current
+       let days = calendar.numberOfDaysBetween(from: soberDate, to: Date())
+       return days
     }
     
 }
