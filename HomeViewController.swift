@@ -15,20 +15,23 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         soberData = controller.getSoberData()
         
         if let soberData = soberData {
-            
             setUpButton.isHidden = true
-            soberTimeLabel.text = "\(soberData.returnDaysSober())"
-            moneySavedLabel.text = "\(soberData.calculateMoneySaved())"
-            reloadInputViews()
+            soberTimeLabel.text = "Day \(soberData.returnDaysSober())"
+            moneySavedLabel.text = "$\(soberData.calculateMoneySaved())"
             
         } else {
             setUpButton.isHidden = false
         }
+        
+        
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewDidLoad()
     }
 
     //MARK: - Outlets

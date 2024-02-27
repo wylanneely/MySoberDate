@@ -19,22 +19,33 @@ class SettingsViewController: UIViewController  {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        self.soberData = soberController.getSoberData()
+        
         setUpDatePicker()
         let dformatter = DateFormatter()
         dformatter.dateStyle = .medium
         dformatter.timeStyle = .none
+        
         if let soberData = soberData {
             soberDateLabel.text = dformatter.string(from: soberData.soberDate)
             dailyDollarTextField.text = "\(soberData.dailyDollarAmount)"
-            
-        }
-        if soberData == nil {
+            saveUpdateButton.isHidden = true
+            buttomImageView.isHidden = true
+            let displayDate = soberData.soberDate
+            soberDateLabel.text = dformatter.string(from: displayDate)
+            soberDatePicker.date = displayDate
+        } else  {
+            saveUpdateButton.isHidden = false
+            buttomImageView.isHidden = false
             let todaysDate = Date()
-            
             soberDateLabel.text = dformatter.string(from: todaysDate)
         }
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewDidLoad()
     }
     
 
@@ -55,15 +66,33 @@ class SettingsViewController: UIViewController  {
     @IBOutlet weak var soberDatePicker: UIDatePicker!
     @IBOutlet weak var dailyDollarTextField: UITextField!
     @IBOutlet weak var saveUpdateButton: UIButton!
+    @IBOutlet weak var buttomImageView: UIImageView!
     
     @IBAction func datePickerSelected(_ sender: Any) {
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         let selectedDate = dateFormatter.string(from: soberDatePicker.date)
         soberDateLabel.text = selectedDate
+        
+        checkHideButton()
 
     }
+    
+    @IBAction func dollarTextChanged(_ sender: Any) {
+        checkHideButton()
+    }
+    
+    func checkHideButton(){
+        let newData = createSoberData()
+        if newData.soberDate == self.soberData?.soberDate && newData.dailyDollarAmount == self.soberData?.dailyDollarAmount {
+            saveUpdateButton.isHidden = true
+            buttomImageView.isHidden = true
+        } else {
+            saveUpdateButton.isHidden = false
+            buttomImageView.isHidden = false
+        }    }
     
     @IBAction func saveUpdateButtonTapped(_ sender: Any) {
         let savedSoberData = createSoberData()
