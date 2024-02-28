@@ -1,5 +1,5 @@
 //
-//  DayCounterTableViewCell.swift
+//  MoneyTableViewCell.swift
 //  MySoberDate
 //
 //  Created by Wylan L Neely on 2/27/24.
@@ -7,30 +7,25 @@
 
 import UIKit
 
-class DayCounterTableViewCell: UITableViewCell {
+class MoneyTableViewCell: UITableViewCell {
     
     var soberData: SoberData?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpLabels()
-        // Initialization code
+        setUpLabel()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func setUpLabels(){
+    func setUpLabel(){
         if let soberData = soberData {
-            timeLabel.text = "\(soberData.returnDaysSober())"
-            timeTypeLabel.text = "Days"
+            moneyLabel.text = "$\(soberData.calculateMoneySaved())"
         }
-        
     }
     
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var timeTypeLabel: UILabel!
-    
+    @IBOutlet weak var moneyLabel: UILabel!
     
 }
