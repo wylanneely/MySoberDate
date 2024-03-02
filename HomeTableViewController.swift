@@ -14,6 +14,8 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     let controller = SoberController()
     var soberData: SoberData?
     let service = SwiftDatabaseService.shared
+    
+    var gratefulNotes = [GratefulNote]()
     var note: GratefulNote?
     var isGratefulToday: Bool = false
     
@@ -25,6 +27,13 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         if let soberData {
             soberDateLabel.text = "Sober \(soberData.returnFormattedDate())"
         }
+        if let gNote = gratefulNotes.last {
+            if gNote.date.asDateString == Date().asDateString {
+                self.isGratefulToday = true
+                self.note = gNote
+            }
+        }
+        
         setUpTableView()
         fetchData()
     }
@@ -33,17 +42,23 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         self.viewDidLoad()
     }
     
+    
     func fetchData(){
         service.fetchTasks { data , error in
             if let error {
                 print(error)
             }
             if let data {
-                if data.first?.date.onlyDate == Date().onlyDate{
-                    self.note = data.first
-                    self.isGratefulToday = true
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()}
+                self.gratefulNotes = data
+                self.note = data.last
+                if let gNote = self.gratefulNotes.last {
+                    if gNote.date.asDateString == Date().asDateString {
+                        self.isGratefulToday = true
+                        self.note = gNote
+                    }
+                }
+                DispatchQueue.main.async {
+                        self.tableView.reloadData()
                 }
             }
             
