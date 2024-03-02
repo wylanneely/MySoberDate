@@ -51,4 +51,65 @@ extension Date {
             return dformatter.string(from: self)
         }
     }
+    
+    
+    func calculateHours()->String{
+        let difference = Calendar.current.dateComponents([.hour], from: self, to: Date())
+        
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [ .hour]
+
+        formatter.unitsStyle = .full
+        if let soberHours = formatter.string(from: difference) {
+            return soberHours
+        } else {
+            return "error"
+        }
+        
+    }
+    
+    func calculateMins()->String {
+        let difference = Calendar.current.dateComponents([.minute], from: self, to: Date())
+        
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [ .minute]
+
+        formatter.unitsStyle = .full
+        if let soberHours = formatter.string(from: difference) {
+            return soberHours
+        } else {
+            return "error"
+        }
+    }
+    
+    func calculateDays()->String {
+        let difference = Calendar.current.dateComponents([.day], from: self, to: Date())
+        
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [ .day]
+
+        formatter.unitsStyle = .full
+        if let soberHours = formatter.string(from: difference) {
+            return soberHours
+        } else {
+            return "error"
+        }
+    }
+    
+    func calculateYearMonthDay()->String {
+        let difference = Calendar.current.dateComponents([.year,.month,.day], from: self, to: Date())
+        
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [ .year,.month,.day]
+
+        formatter.unitsStyle = .full
+        if let soberHours = formatter.string(from: difference) {
+            return soberHours
+        } else {
+            return "error"
+        }
+    }
+    
+    
+    
 }
