@@ -35,7 +35,7 @@ class GratefulListViewController: UIViewController, UITableViewDelegate, UITable
             }
             
             if let data {
-                self.notes = data
+                self.notes = data.reversed()
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
