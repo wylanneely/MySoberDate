@@ -27,12 +27,15 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         if let soberData {
             soberDateLabel.text = "Sober \(soberData.returnFormattedDate())"
         }
-        if let gNote = gratefulNotes.last {
-            if gNote.date.asDateString == Date().asDateString {
-                self.isGratefulToday = true
-                self.note = gNote
-            }
-        }
+//        if let gNote = gratefulNotes.last {
+//            if gNote.date.asDateString == Date().asDateString {
+//                self.isGratefulToday = true
+//                self.note = gNote
+//            } else {
+//                self.isGratefulToday = false
+//                self.note = nil
+//            }
+//        }
         
         setUpTableView()
         fetchData()
@@ -55,6 +58,9 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
                     if gNote.date.asDateString == Date().asDateString {
                         self.isGratefulToday = true
                         self.note = gNote
+                    } else {
+                        self.isGratefulToday = false
+                        self.note = nil
                     }
                 }
                 DispatchQueue.main.async {
