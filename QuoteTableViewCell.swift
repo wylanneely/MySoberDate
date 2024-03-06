@@ -40,7 +40,17 @@ class QuoteTableViewCell: UITableViewCell {
         let q = quoteObj.quote
         let a = quoteObj.author
         let text = "\(q) \n- \(a)"
+        
+        
         quoteLabel.text? = text
+        // Set the background color for the text only
+        let attributedString = NSMutableAttributedString(string: quoteLabel.text ?? "")
+        if let textRange = attributedString.string.range(of: quoteLabel.text ?? "") {
+            let nsRange = NSRange(textRange, in: attributedString.string)
+            let grayColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.55)
+            attributedString.addAttribute(NSAttributedString.Key.backgroundColor, value: grayColor, range: nsRange )
+            quoteLabel.attributedText = attributedString
+        }
     }
     
     func setUp(quote:Quote){
@@ -54,6 +64,7 @@ class QuoteTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func imageTapped(_ sender: Any) {
         changeImage()
     }
