@@ -12,7 +12,7 @@ import UIKit
 struct Quotes {
     
     let quotes = [
-            quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10,quote11, quote12, quote13, quote14, quote15, quote16, quote17, quote18, quote19, quote20,quote21, quote22, quote23, quote24, quote25, quote26, quote27, quote28, quote29, quote30,quote31, quote32, quote33, quote34, quote35, quote36, quote37, quote38, quote39, quote40,quote41, quote42, quote43, quote44, quote45, quote46, quote47, quote48, quote49, quote50,quote52, quote53, quote54, quote55, quote56, quote57]
+            quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10,quote11, quote12, quote13, quote14, quote15, quote16, quote17, quote18, quote19, quote20,quote21, quote22, quote23, quote24, quote25, quote26, quote27, quote28, quote29, quote30,quote31, quote32, quote33, quote34, quote35, quote36, quote37, quote38, quote39, quote40,quote41, quote42, quote43, quote44, quote45, quote46, quote47, quote48, quote49, quote50,quote52, quote53, quote54, quote55, quote56, quote57,quote59,quote68,quote69,quote70]
     
 //    let quotes = [
 //        quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10,
@@ -81,23 +81,23 @@ let quote47 = Quote(quote: "The strength of the team is each individual member. 
 let quote48 = Quote(quote: "Find a group of people who challenge and inspire you, spend a lot of time with them, and it will change your life.", author: "Amy Poehler", image: UIImage(named: "amy-p")!)
 let quote49 = Quote(quote: "Keep away from people who try to belittle your ambitions. Small people always do that, but the really great make you feel that you, too, can become great.", author: "Mark Twain", image: UIImage(named: "mark-twain")!)
 let quote50 = Quote(quote: "Being good in business is the most fascinating kind of art. Making money is art and working is art and good business is the best art.", author: "Andy Worhol", image: UIImage(named: "andy-worhol")!)
-//let quote51 = Quote(quote: "Challenges are what make life interesting and overcoming them is what makes life meaningful.", author: "Joshua J. Marine", image: UIImage(named: <#T##String#>)!)
+let quote51 = Quote(quote: "Challenges are what make life interesting and overcoming them is what makes life meaningful.", author: "Joshua J. Marine", image: UIImage(named: "j-marine")!)
 let quote52 = Quote(quote: "Diamonds are nothing more than chunks of coal that stuck to their jobs.", author: "Malcom Forbes", image: UIImage(named: "forbes")!)
 let quote53 = Quote(quote: "Pretend that every single person you meet has a sign around his or her neck that says, 'Make me feel important.'", author: "Mary Kay Ash", image: UIImage(named: "mary-kay")!)
 let quote54 = Quote(quote: "Be poor, humble and driven (PhD). Don't be afraid to shift or pivot.", author: "Alex Rodgriguez", image: UIImage(named: "a-rod")!)
 let quote55 = Quote(quote: "I'd rather regret the things I've done than regret the things I haven't done.", author: "Lucille Ball", image: UIImage(named: "l-ball")!)
 let quote56 = Quote(quote: "Motivation is temporary. Inspiration is permanent.", author: "Kelly Slater", image: UIImage(named: "kelly-slater")!)
 let quote57 = Quote(quote: "You gotta go in the mud sometimes to figure who you are.", author: "Andy Iorns", image: UIImage(named: "andy-irons")!)
-//let quote58 = Quote(quote: "Rock bottom became the solid foundation on which I rebuilt my life.", author: "J. K. Rowling", image: UIImage(named: <#T##String#>)!)
-//let quote59 = Quote(quote: "Hardships often prepare ordinary people for an extraordinary destiny", author: "C. S. Lewis", image: UIImage(named: <#T##String#>)!)
-//let quote60 = Quote(quote: "I didn't get there by wishing for it or hoping for it, but by working for it.", author: "Estée Lauder", image: UIImage(named: <#T##String#>)!)
-//let quote61 = Quote(quote: "The only person you are destined to become is the person you decide to be.", author: "Ralph Waldo Emerson", image: UIImage(named: <#T##String#>)!)
-//let quote62 = Quote(quote: "First, you take a drink, then the drink takes a drink, then the drink takes you.", author: "F. Scott Fitzgerald", image: UIImage(named: <#T##String#>)!)
-//let quote63 = Quote(quote: "Done is better than perfect.", author: "Sheryl Sandberg", image: UIImage(named: <#T##String#>)!)
-//let quote64 = Quote(quote: "Remember that just because you hit bottom doesn’t mean you have to stay there.", author: "Robert Downey Jr.", image: UIImage(named: <#T##String#>)!)
-//let quote65 = Quote(quote: "Don’t judge each day by the harvest you reap but by the seeds that you plant.", author: "Robert L. Stevenson", image: UIImage(named: <#T##String#>)!)
-//let quote66 = Quote(quote: "Love God; love others; do your best in all you do, even if you fall short!", author: "Bethany Hamilton", image: UIImage(named: <#T##String#>)!)
-//let quote67 = Quote(quote: "The optimist thinks this is the best of all possible worlds. The pessimist fears it is true.", author: "J. Oppenheimer", image: UIImage(named: <#T##String#>)!)
-//let quote68 = Quote(quote: "The most common way people give up their power is by thinking they don’t have any.", author: "Alice Walker", image: UIImage(named: <#T##String#>)!)
-//let quote69 = Quote(quote: "One of the hardest things was learning that I was worth recovery.", author: "Demi Lovato", image: UIImage(named: <#T##String#>)!)
-//let quote70 = Quote(quote: "The person who goes to the gym every day regardless of how they feel, will always beat the person who only goes to the gym when they feel like it.", author: "Andrew Tate", image: UIImage(named: <#T##String#>)!)
+let quote58 = Quote(quote: "Rock bottom became the solid foundation on which I rebuilt my life.", author: "J. K. Rowling", image: UIImage(named: "jk-rowling")!)
+let quote59 = Quote(quote: "Hardships often prepare ordinary people for an extraordinary destiny", author: "C. S. Lewis", image: UIImage(named: "cs-lewis")!)
+let quote60 = Quote(quote: "I didn't get there by wishing for it or hoping for it, but by working for it.", author: "Estée Lauder", image: UIImage(named: "estee-lauder")!)
+let quote61 = Quote(quote: "The only person you are destined to become is the person you decide to be.", author: "Ralph Waldo Emerson", image: UIImage(named: "ralph-waldo")!)
+let quote62 = Quote(quote: "First, you take a drink, then the drink takes a drink, then the drink takes you.", author: "F. Scott Fitzgerald", image: UIImage(named: "fscottf")!)
+let quote63 = Quote(quote: "Done is better than perfect.", author: "Sheryl Sandberg", image: UIImage(named: "s-sandberg")!)
+let quote64 = Quote(quote: "Remember that just because you hit bottom doesn’t mean you have to stay there.", author: "Robert Downey Jr.", image: UIImage(named: "robert-d-jr")!)
+let quote65 = Quote(quote: "Don’t judge each day by the harvest you reap but by the seeds that you plant.", author: "Robert L. Stevenson", image: UIImage(named: "robert-stevenson")!)
+let quote66 = Quote(quote: "Love God; love others; do your best in all you do, even if you fall short!", author: "Bethany Hamilton", image: UIImage(named: "bethany-hamilton")!)
+let quote67 = Quote(quote: "The optimist thinks this is the best of all possible worlds. The pessimist fears it is true.", author: "J. Oppenheimer", image: UIImage(named: "oppenheimer")!)
+let quote68 = Quote(quote: "The most common way people give up their power is by thinking they don’t have any.", author: "Alice Walker", image: UIImage(named: "alice-walker")!)
+let quote69 = Quote(quote: "One of the hardest things was learning that I was worth recovery.", author: "Demi Lovato", image: UIImage(named: "demi")!)
+let quote70 = Quote(quote: "The person who goes to the gym every day regardless of how they feel, will always beat the person who only goes to the gym when they feel like it.", author: "Andrew Tate", image: UIImage(named: "andrew-tate")!)
