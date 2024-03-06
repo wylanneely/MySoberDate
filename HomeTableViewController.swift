@@ -27,15 +27,6 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         if let soberData {
             soberDateLabel.text = "Sober \(soberData.returnFormattedDate())"
         }
-//        if let gNote = gratefulNotes.last {
-//            if gNote.date.asDateString == Date().asDateString {
-//                self.isGratefulToday = true
-//                self.note = gNote
-//            } else {
-//                self.isGratefulToday = false
-//                self.note = nil
-//            }
-//        }
         
         setUpTableView()
         fetchData()
@@ -43,6 +34,13 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         self.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(self.viewDidLoad), name: UIApplication.willEnterForegroundNotification, object: UIApplication.shared)
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     
