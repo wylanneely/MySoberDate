@@ -12,7 +12,7 @@ import UIKit
 struct Quotes {
     
     let quotes = [
-            quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10,quote11, quote12, quote13, quote14, quote15, quote16, quote17, quote18, quote19, quote20,quote21, quote22, quote23, quote24, quote25, quote26, quote27, quote28, quote29, quote30,quote31, quote32, quote33, quote34, quote35, quote36, quote37, quote38, quote39, quote40,quote41, quote42, quote43, quote44, quote45, quote46, quote47, quote48, quote49, quote50,quote52, quote53, quote54, quote55, quote56, quote57,quote59,quote68,quote69,quote70]
+        quote1, quote2, quote3, quote4, quote5,quote71, quote6, quote7, quote8, quote9, quote10,quote11, quote75,quote12, quote13, quote14, quote15, quote16, quote17, quote18, quote19, quote20,quote21, quote22, quote23, quote24,quote76,quote74,quote25, quote26, quote27, quote28, quote29, quote30,quote31, quote32, quote33, quote34, quote35, quote36, quote37, quote38, quote39, quote40,quote41, quote42, quote43, quote44, quote45, quote46, quote47,quote72,quote48, quote49, quote50,quote51,quote52,quote77,quote53, quote54, quote55,quote73, quote56, quote57,quote59,quote60,quote61,quote62,quote63,quote64,quote65,quote66,quote67,quote68,quote69,quote70,quote78,quote79,quote80,quote81,quote82,quote83,quote84,quote85,quote86,quote87,quote88,quote89,quote90]
     
 //    let quotes = [
 //        quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10,
@@ -35,7 +35,7 @@ let quote1 = Quote(quote: "Sometimes you have to be a lion, so that you can be t
 let quote2 = Quote(quote: "I do not like that man, I must get to know him better.", author: "Abraham Lincoln", image: UIImage(named: "abraham-lincoln")!)
 let quote3 = Quote(quote: "The best and most beautiful things in the world cannot be seen or even touched... they must be felt with the heart", author: "Helen Keller", image: UIImage(named: "helen-keller")!)
 let quote4 = Quote(quote: "Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate, only love can do that.", author: "Martin L. King Jr.", image: UIImage(named: "mlk")!)
-let quote5 = Quote(quote: "Once you know what failure feels like, determination chases success.", author: "Kobe Bryant", image: UIImage(named: "kobe-bryant")!)
+let quote85 = Quote(quote: "Once you know what failure feels like, determination chases success.", author: "Kobe Bryant", image: UIImage(named: "kobe-bryant")!)
 let quote6 = Quote(quote: "So you were born to feel ‘nice?’ Instead of doing things and experiencing them? Why aren’t you running to do what your nature demands?", author: "Marcus Aurelius", image: UIImage(named: "marcus-aurelius")!)
 let quote17 = Quote(quote: "Do not pray for easy lives. Pray to be stronger men.", author: "Rev. Phillips Brooks", image: UIImage(named: "rev-phillips-brooks")!)
 let quote8 = Quote(quote: "If freedom of speech is taken away, then dumb and silent we may be led, like sheep to the slaughter.", author: "George Washington", image: UIImage(named: "george-washington")!)
@@ -101,3 +101,24 @@ let quote67 = Quote(quote: "The optimist thinks this is the best of all possible
 let quote68 = Quote(quote: "The most common way people give up their power is by thinking they don’t have any.", author: "Alice Walker", image: UIImage(named: "alice-walker")!)
 let quote69 = Quote(quote: "One of the hardest things was learning that I was worth recovery.", author: "Demi Lovato", image: UIImage(named: "demi")!)
 let quote70 = Quote(quote: "The person who goes to the gym every day regardless of how they feel, will always beat the person who only goes to the gym when they feel like it.", author: "Andrew Tate", image: UIImage(named: "andrew-tate")!)
+let quote71 = Quote(quote: "Anywhere I see suffering, that is where I want to be, doing what I can.", author: "Princess Diana", image: UIImage(named: "p-diana")!)
+let quote72 = Quote(quote: "Don't worry about motivation. Motivation is fickle. It comes and goes. It is unreliable - and when you are counting on motivation to get your goals accomplished, you will likely fall short.", author: "Jocko Willink", image: UIImage(named: "jocko")!)
+let quote73 = Quote(quote: "Our greatest glory is not in never falling, but in rising every time we fall.", author: "Confucius", image: UIImage(named: "confucius")!)
+let quote74 = Quote(quote: "A leader leads by example not by force.", author: "Sun Tzu", image: UIImage(named: "sun-tzu")!)
+let quote75 = Quote(quote: "So I say to you, Ask and it will be given to you; search, and you will find; knock, and the door will be opened for you.", author: "Jesus Christ", image: UIImage(named: "jesus")!)
+let quote76 = Quote(quote: "No matter how hard the past, you can always begin again.", author: "Buddha", image: UIImage(named: "buddha")!)
+let quote77 = Quote(quote: "When we meet real tragedy in life, we can react in two ways – either by losing hope and falling into self-destructive habits, or by using the challenge to find our inner strength", author: "Dalai Lama", image: UIImage(named: "dalai-lama")!)
+let quote78 = Quote(quote: "I have yet to meet someone who was successful who was even slightly negative. That comes from a muscle training. You can work on negativity and weed it out of your life.", author: "Katt Williams", image: UIImage(named: "katt-w")!)
+let quote79 = Quote(quote: "Anxiety is your best friend. It's there to help you. It's trying to save your life.", author: "Bill Burr", image: UIImage(named: "bill-burr")!)
+let quote80 = Quote(quote: "Recognize and embrace your flaws so you can learn from them. Sometimes it takes a little polishing to truly shine.", author: "Kanye West", image: UIImage(named: "kanye")!)
+let quote81 = Quote(quote: "All the suffering, stress, and addiction comes from not realizing you already are what you are looking for.", author: "Jon Kabat-Zinn", image: UIImage(named: "jon-zinn")!)
+let quote82 = Quote(quote: "Ya think whiskey tastes good? Try a big cup of sobriety -- now that’s the good stuff!", author: "Steven Tyler", image: UIImage(named: "steven-tyler")!)
+let quote5 = Quote(quote: "If you can quit for a day, you can quit for a lifetime.", author: "Benjamin Alire Sáenz", image: UIImage(named: "benjamin-saenz")!)
+let quote84 = Quote(quote: "True ambition is not what we thought it was. True ambition is the profound desire to live usefully and walk humbly under the grace of God.", author: "Bill W.", image: UIImage(named: "bill-w")!)
+let quote83 = Quote(quote: "What is addiction, really? It is a sign, a signal, a symptom of distress. It is a language that tells us about a plight that must be understood.", author: "Allice Duer Miller", image: UIImage(named: "alice-miller")!)
+let quote86 = Quote(quote: "People often say that motivation doesn’t last. Neither does bathing. That’s why we recommend it daily.", author: "Zig Ziglar", image: UIImage(named: "zig-ziglar")!)
+let quote87 = Quote(quote: "The greatness of a man is not in how much wealth he acquires, but in his integrity and his ability to affect those around him positively.", author: "Bob Marley", image: UIImage(named: "bob-marley")!)
+let quote88 = Quote(quote: "The way to get started is to quit talking and begin doing.", author: "Walt Disney", image: UIImage(named: "walt-disney")!)
+let quote89 = Quote(quote: "Hitting bottom and hitting it hard was the worst thing that ever happened to me and the best thing that ever happened to me.", author: "Dave Ramsey", image: UIImage(named: "dave-r")!)
+let quote90 = Quote(quote: "Addiction denied is recovery delayed.", author: "Mokokoma Mokhonoana", image: UIImage(named: "mokokoma-mokhonoana")!)
+//let quote91 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
