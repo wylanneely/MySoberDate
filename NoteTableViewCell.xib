@@ -27,6 +27,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtN-S9-6dM">
                         <rect key="frame" x="10" y="10" width="300" height="460"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gratefulBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GbT-rx-Ycn">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="460"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todays Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN1-Nl-5iF">
                                 <rect key="frame" x="20" y="6" width="260" height="28"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="20"/>
@@ -126,7 +134,9 @@
                         <color key="backgroundColor" red="0.12775781750000001" green="0.14844718579999999" blue="0.2279972136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FDJ-CZ-JSn" firstAttribute="bottom" secondItem="30e-xx-pLh" secondAttribute="bottom" id="4bN-7z-GXo"/>
+                            <constraint firstAttribute="bottom" secondItem="GbT-rx-Ycn" secondAttribute="bottom" id="5FQ-Xo-9I3"/>
                             <constraint firstAttribute="trailing" secondItem="kJS-oQ-G3E" secondAttribute="trailing" constant="20" id="5wS-Xf-BCO"/>
+                            <constraint firstItem="GbT-rx-Ycn" firstAttribute="top" secondItem="jtN-S9-6dM" secondAttribute="top" id="6YO-vs-Ejm"/>
                             <constraint firstItem="n4l-cS-tyg" firstAttribute="leading" secondItem="jtN-S9-6dM" secondAttribute="leading" constant="20" symbolic="YES" id="Ag3-rD-dMI"/>
                             <constraint firstItem="Z9I-at-mDO" firstAttribute="top" secondItem="eia-q3-seh" secondAttribute="bottom" constant="4" id="Cdw-da-s9f"/>
                             <constraint firstItem="6sH-Q5-rTF" firstAttribute="top" secondItem="kN1-Nl-5iF" secondAttribute="bottom" constant="8" symbolic="YES" id="FV3-JF-VXa"/>
@@ -152,6 +162,8 @@
                             <constraint firstItem="FDJ-CZ-JSn" firstAttribute="top" secondItem="30e-xx-pLh" secondAttribute="top" id="nXU-OY-j4K"/>
                             <constraint firstItem="kN1-Nl-5iF" firstAttribute="centerX" secondItem="jtN-S9-6dM" secondAttribute="centerX" id="rWk-zC-lpe"/>
                             <constraint firstItem="eia-q3-seh" firstAttribute="leading" secondItem="jtN-S9-6dM" secondAttribute="leading" constant="20" symbolic="YES" id="rxb-AE-pNb"/>
+                            <constraint firstAttribute="trailing" secondItem="GbT-rx-Ycn" secondAttribute="trailing" id="scS-eq-gJB"/>
+                            <constraint firstItem="GbT-rx-Ycn" firstAttribute="leading" secondItem="jtN-S9-6dM" secondAttribute="leading" id="tLf-IU-AxR"/>
                             <constraint firstItem="coE-2g-Vgx" firstAttribute="leading" secondItem="jtN-S9-6dM" secondAttribute="leading" constant="20" symbolic="YES" id="uDE-XD-ICv"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -184,6 +196,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="gratefulBackground" width="241.66667175292969" height="256.66665649414062"/>
         <image name="saveButtonBackgroun" width="54.666667938232422" height="14"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
