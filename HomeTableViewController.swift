@@ -27,15 +27,18 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         if let soberData {
             soberDateLabel.text = "Sober \(soberData.returnFormattedDate())"
         }
-        
         setUpTableView()
         fetchData()
+    }
+    //too help reload app when entering
+    @objc func reload(){
+        self.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector:#selector(self.viewDidLoad), name: UIApplication.willEnterForegroundNotification, object: UIApplication.shared)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.reload), name: UIApplication.willEnterForegroundNotification, object: UIApplication.shared)
 
     }
     
@@ -60,18 +63,18 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
                         self.isGratefulToday = false
                         self.note = nil
                     }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
                 DispatchQueue.main.async {
                         self.tableView.reloadData()
                 }
             }
-            
         }
     }
     
     @IBOutlet weak var soberDateLabel: UILabel!
-    
-    
    
     //MARK: - Tableview
     
@@ -83,7 +86,8 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView.register(UINib(nibName: "DayCounterTableViewCell", bundle: nil), forCellReuseIdentifier: "DayCounterTableViewCell")
         self.tableView.register(UINib(nibName: "MoneyTableViewCell", bundle: nil), forCellReuseIdentifier: "MoneyTableViewCell")
         self.tableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteTableViewCell")
-        self.tableView.register(UINib(nibName: "QuoteTableViewCell", bundle: nil), forCellReuseIdentifier: "QuoteTableViewCell")    }
+        self.tableView.register(UINib(nibName: "QuoteTableViewCell", bundle: nil), forCellReuseIdentifier: "QuoteTableViewCell")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
