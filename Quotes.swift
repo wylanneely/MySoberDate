@@ -12,7 +12,7 @@ import UIKit
 struct Quotes {
     
     let quotes = [
-        quote1, quote2, quote3, quote4, quote5,quote71, quote6, quote7, quote8, quote9, quote10,quote11, quote75,quote12, quote13, quote14, quote15, quote16, quote17, quote18, quote19, quote20,quote21, quote22, quote23, quote24,quote74,quote25, quote26, quote27, quote28, quote29, quote30,quote31, quote32, quote33, quote34, quote35, quote36, quote37, quote38, quote39, quote40,quote41, quote42, quote43, quote44, quote45, quote46, quote47,quote72,quote48, quote49, quote50,quote51,quote52,quote77,quote53, quote54, quote55,quote73, quote56, quote57,quote59,quote60,quote61,quote62,quote63,quote64,quote65,quote66,quote67,quote68,quote69,quote70,quote78,quote79,quote80,quote81,quote82,quote83,quote84,quote85,quote86,quote87,quote88,quote89,quote90,quote76, quote91, quote92, quote93, quote94, quote95, quote96, quote97, quote98, quote99, quote100, quote101, quote102, quote103, quote104, quote105, quote106, quote107, quote108, quote109, quote110, quote111, quote112, quote113, quote114, quote115, quote116, quote117, quote118, quote119, quote120, quote121, quote122, quote123, quote124, quote125, quote126, quote127, quote128, quote129, quote130, quote131, quote132, quote133, quote134, quote135, quote136, quote137, quote138, quote139, quote140, quote141, quote142, quote143]
+        quote1, quote2, quote3, quote4, quote5,quote71, quote6, quote7, quote8, quote9, quote10,quote11, quote75,quote12, quote13, quote14, quote15, quote16, quote17, quote18, quote19, quote20,quote21, quote22, quote23, quote24,quote74,quote25, quote26, quote27, quote28, quote29, quote30,quote31, quote32, quote33, quote34, quote35, quote36, quote37, quote38, quote39, quote40,quote41, quote42, quote43, quote44, quote45, quote46, quote47,quote72,quote48, quote49, quote50,quote51,quote52,quote77,quote53, quote54, quote55,quote73, quote56, quote57,quote59,quote60,quote61,quote62,quote63,quote64,quote65,quote66,quote67,quote68,quote69,quote70,quote78,quote79,quote80,quote81,quote82,quote83,quote84,quote85,quote86,quote87,quote88,quote89,quote90,quote76, quote91, quote92, quote93, quote94, quote95, quote96, quote97, quote98, quote99, quote100, quote101, quote102, quote103, quote104, quote105, quote106, quote107, quote108, quote109, quote110, quote111, quote112, quote113, quote114, quote115, quote116, quote117, quote118, quote119, quote120, quote121, quote122, quote123, quote124, quote125, quote126, quote127, quote128, quote129, quote130, quote131, quote132, quote133, quote134, quote135, quote136, quote137, quote138, quote139, quote140, quote141, quote142, quote143,quote144, quote145, quote146, quote147, quote148, quote149, quote150, quote151, quote152, quote153, quote154, quote155, quote156, quote157, quote158, quote159, quote160, quote161, quote162, quote163, quote164]
 
     
 //    let quotes = [
@@ -146,7 +146,7 @@ let quote112 = Quote(quote: "You have power over your mind—not outside events.
 let quote113 = Quote(quote: "But man is not made for defeat. A man can be destroyed but not defeated.", author: "Ernest Hemingway", image: UIImage(named:"ernest-hemingway")!)
 let quote114 = Quote(quote: "When you reach the end of your rope, tie a knot in it and hang on.", author: "Franklin D. Roosevelt", image: UIImage(named: "fdr")!)
 let quote115 = Quote(quote: "Learning never exhausts the mind.", author: "Leonardo da Vinci", image: UIImage(named: "leonardo-vinci")!)
-let quote116 = Quote(quote: "Honesty is the first chapter in the book of wisdom.", author: "Thomas Jefferson", image: UIImage(named: "thomas-jeffersonsun")!)
+let quote116 = Quote(quote: "Honesty is the first chapter in the book of wisdom.", author: "Thomas Jefferson", image: UIImage(named: "thomas-jefferson")!)
 let quote117 = Quote(quote: "God Gives His Toughest Battles to His Strongest Soldiers", author: "Isaiah 4:31", image: UIImage(named: "isaiah")!)
 let quote118 = Quote(quote: "In the end, it's not the years in your life that count. It's the life in your years.", author: "Abraham Lincoln", image: UIImage(named: "abraham-lincoln")!)
 let quote119 = Quote(quote: "Do not mind anything that anyone tells you about anyone else. Judge everyone and everything for yourself.", author: "Henry James", image: UIImage(named: "henry-james")!)
@@ -196,5 +196,22 @@ let quote161 = Quote(quote: "It's in responsibility that most people find the me
 let quote162 = Quote(quote: "Great things are done by a series of small things brought together.", author: "Vincent Van Gogh", image: UIImage(named: "gogh")!)
 let quote163 = Quote(quote: "Most of us aren't defeated in one decisive battle. We are defeated one tiny, seemingly insignificant surrender at a time that chips away at who we should really be.", author: "Jocko Willink", image: UIImage(named: "jocko")!)
 let quote164 = Quote(quote: "The crucial point is: by changing ourselves, we change the world. As we become more loving on the inside, healing occurs on the outside.", author: "David R. Hawkins", image: UIImage(named: "d-hawkins")!)
-//let quote165 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote165 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote166 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote167 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote168 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote169 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote170 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote171 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote172 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote173 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote174 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote175 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote176 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote177 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote178 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote179 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote180 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
+let quote181 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
 
+//let quote165 = Quote(quote: <#T##String#>, author: <#T##String#>, image: UIImage(named: <#T##String#>)!)
