@@ -36,31 +36,31 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todays Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN1-Nl-5iF">
-                                <rect key="frame" x="20" y="6" width="260" height="28"/>
-                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="20"/>
+                                <rect key="frame" x="20" y="6" width="260" height="33.666666666666664"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grateful :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coE-2g-Vgx">
-                                <rect key="frame" x="20" y="155.33333333333334" width="82.333333333333329" height="25.333333333333343"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
+                                <rect key="frame" x="19.999999999999993" y="157.66666666666666" width="94.333333333333314" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eia-q3-seh">
-                                <rect key="frame" x="19.999999999999996" y="268.66666666666669" width="51.666666666666657" height="25.333333333333314"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
+                                <rect key="frame" x="19.999999999999996" y="267.66666666666669" width="57.666666666666657" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Write about something good happening in your life." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n4l-cS-tyg">
-                                <rect key="frame" x="20" y="71.333333333333329" width="260" height="79.999999999999986"/>
+                                <rect key="frame" x="20" y="79.666666666666671" width="260" height="70.000000000000014"/>
                                 <color key="backgroundColor" red="0.62777077516667268" green="0.62440718084820335" blue="0.68316079538865981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="E3M-vN-txp"/>
+                                    <constraint firstAttribute="height" constant="70" id="E3M-vN-txp"/>
                                 </constraints>
                                 <color key="textColor" systemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -69,13 +69,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Write about something you are grateful for." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kJS-oQ-G3E">
-                                <rect key="frame" x="20" y="184.66666666666666" width="260" height="79.999999999999972"/>
+                                <rect key="frame" x="20" y="189.66666666666666" width="260" height="69.999999999999972"/>
                                 <color key="backgroundColor" red="0.62777077520000002" green="0.62440718080000002" blue="0.68316079539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="YwS-eA-b8c"/>
+                                    <constraint firstAttribute="height" constant="70" id="YwS-eA-b8c"/>
                                 </constraints>
                                 <color key="textColor" systemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -84,13 +84,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Write out a few goals out for the day." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z9I-at-mDO">
-                                <rect key="frame" x="20" y="298" width="260" height="80"/>
+                                <rect key="frame" x="20" y="299.66666666666669" width="260" height="70"/>
                                 <color key="backgroundColor" red="0.62777077520000002" green="0.62440718080000002" blue="0.68316079539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="xL2-41-dJD"/>
+                                    <constraint firstAttribute="height" constant="70" id="xL2-41-dJD"/>
                                 </constraints>
                                 <color key="textColor" systemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -99,13 +99,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sH-Q5-rTF">
-                                <rect key="frame" x="20.000000000000004" y="42" width="58.333333333333343" height="25.333333333333329"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
+                                <rect key="frame" x="20" y="47.666666666666664" width="64.666666666666671" height="27.999999999999993"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveButtonBackgroun" translatesAutoresizingMaskIntoConstraints="NO" id="30e-xx-pLh">
-                                <rect key="frame" x="70" y="398" width="160" height="50"/>
+                                <rect key="frame" x="70" y="385.66666666666669" width="160" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="SkC-Hs-VIx"/>
                                 </constraints>
@@ -116,7 +116,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDJ-CZ-JSn">
-                                <rect key="frame" x="70" y="398" width="160" height="50"/>
+                                <rect key="frame" x="70" y="385.66666666666669" width="160" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OIg-zk-rox"/>
@@ -140,8 +140,7 @@
                             <constraint firstItem="n4l-cS-tyg" firstAttribute="leading" secondItem="jtN-S9-6dM" secondAttribute="leading" constant="20" symbolic="YES" id="Ag3-rD-dMI"/>
                             <constraint firstItem="Z9I-at-mDO" firstAttribute="top" secondItem="eia-q3-seh" secondAttribute="bottom" constant="4" id="Cdw-da-s9f"/>
                             <constraint firstItem="6sH-Q5-rTF" firstAttribute="top" secondItem="kN1-Nl-5iF" secondAttribute="bottom" constant="8" symbolic="YES" id="FV3-JF-VXa"/>
-                            <constraint firstItem="FDJ-CZ-JSn" firstAttribute="top" secondItem="Z9I-at-mDO" secondAttribute="bottom" constant="20" id="Fcz-sX-Pcs"/>
-                            <constraint firstItem="eia-q3-seh" firstAttribute="top" secondItem="kJS-oQ-G3E" secondAttribute="bottom" constant="4" id="GNB-VS-PG2"/>
+                            <constraint firstItem="eia-q3-seh" firstAttribute="top" secondItem="kJS-oQ-G3E" secondAttribute="bottom" constant="8" id="GNB-VS-PG2"/>
                             <constraint firstItem="FDJ-CZ-JSn" firstAttribute="centerX" secondItem="30e-xx-pLh" secondAttribute="centerX" id="Gkk-Yq-yH1"/>
                             <constraint firstItem="FDJ-CZ-JSn" firstAttribute="centerX" secondItem="jtN-S9-6dM" secondAttribute="centerX" id="Gye-je-Eor"/>
                             <constraint firstItem="n4l-cS-tyg" firstAttribute="top" secondItem="6sH-Q5-rTF" secondAttribute="bottom" constant="4" id="JKc-Tp-GpS"/>
@@ -152,13 +151,13 @@
                             <constraint firstItem="kJS-oQ-G3E" firstAttribute="top" secondItem="coE-2g-Vgx" secondAttribute="bottom" constant="4" id="SH5-1D-FIA"/>
                             <constraint firstItem="FDJ-CZ-JSn" firstAttribute="trailing" secondItem="30e-xx-pLh" secondAttribute="trailing" id="XUw-RF-DAA"/>
                             <constraint firstItem="kJS-oQ-G3E" firstAttribute="leading" secondItem="jtN-S9-6dM" secondAttribute="leading" constant="20" id="ZbL-jj-fUS"/>
-                            <constraint firstItem="coE-2g-Vgx" firstAttribute="top" secondItem="n4l-cS-tyg" secondAttribute="bottom" constant="4" id="aJ0-Ar-kHH"/>
+                            <constraint firstItem="coE-2g-Vgx" firstAttribute="top" secondItem="n4l-cS-tyg" secondAttribute="bottom" constant="8" id="aJ0-Ar-kHH"/>
                             <constraint firstItem="FDJ-CZ-JSn" firstAttribute="leading" secondItem="30e-xx-pLh" secondAttribute="leading" id="atM-Yk-g2G"/>
                             <constraint firstAttribute="trailing" secondItem="n4l-cS-tyg" secondAttribute="trailing" constant="20" symbolic="YES" id="bF5-90-Df0"/>
                             <constraint firstItem="kN1-Nl-5iF" firstAttribute="top" secondItem="jtN-S9-6dM" secondAttribute="top" constant="6" id="ddw-T1-u68"/>
                             <constraint firstAttribute="trailing" secondItem="kN1-Nl-5iF" secondAttribute="trailing" constant="20" id="j4q-HE-Cr8"/>
                             <constraint firstItem="kN1-Nl-5iF" firstAttribute="leading" secondItem="jtN-S9-6dM" secondAttribute="leading" constant="20" id="m6g-Yc-rBC"/>
-                            <constraint firstItem="30e-xx-pLh" firstAttribute="top" secondItem="Z9I-at-mDO" secondAttribute="bottom" constant="20" id="mV6-gd-Ccg"/>
+                            <constraint firstItem="30e-xx-pLh" firstAttribute="top" secondItem="Z9I-at-mDO" secondAttribute="bottom" constant="16" id="mV6-gd-Ccg"/>
                             <constraint firstItem="FDJ-CZ-JSn" firstAttribute="top" secondItem="30e-xx-pLh" secondAttribute="top" id="nXU-OY-j4K"/>
                             <constraint firstItem="kN1-Nl-5iF" firstAttribute="centerX" secondItem="jtN-S9-6dM" secondAttribute="centerX" id="rWk-zC-lpe"/>
                             <constraint firstItem="eia-q3-seh" firstAttribute="leading" secondItem="jtN-S9-6dM" secondAttribute="leading" constant="20" symbolic="YES" id="rxb-AE-pNb"/>
