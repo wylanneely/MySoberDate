@@ -62,9 +62,9 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
                     } else {
                         self.isGratefulToday = false
                         self.note = nil
-                    }
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 }
                 DispatchQueue.main.async {
@@ -121,9 +121,11 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
                 cell.isSaved = true
                 cell.note = note
                 cell.awakeFromNib()
+                cell.delegate = self
                 return cell
             }
             cell.note = self.note
+            cell.isSaved = false
             cell.awakeFromNib()
             cell.delegate = self
             return cell
