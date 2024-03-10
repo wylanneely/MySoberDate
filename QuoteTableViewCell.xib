@@ -54,6 +54,19 @@
                             <action selector="imageTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eh7-fJ-EVJ"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUf-Pp-pfy">
+                        <rect key="frame" x="256" y="20" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="YvK-aF-6tF"/>
+                            <constraint firstAttribute="height" constant="44" id="pMn-vO-a0L"/>
+                        </constraints>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
+                        <connections>
+                            <action selector="saveButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F25-e9-GU5"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -65,6 +78,8 @@
                     <constraint firstItem="qnk-4f-JFz" firstAttribute="leading" secondItem="3ez-9J-4is" secondAttribute="leading" constant="10" id="ILW-L5-8Db"/>
                     <constraint firstAttribute="trailing" secondItem="7EK-fU-Lcc" secondAttribute="trailing" constant="10" id="Nub-WB-7F6"/>
                     <constraint firstItem="6pQ-gF-SDN" firstAttribute="trailing" secondItem="3ez-9J-4is" secondAttribute="trailing" id="RmC-Im-MAZ"/>
+                    <constraint firstItem="TUf-Pp-pfy" firstAttribute="trailing" secondItem="3ez-9J-4is" secondAttribute="trailing" constant="-10" id="YLR-TH-zS9"/>
+                    <constraint firstItem="TUf-Pp-pfy" firstAttribute="top" secondItem="3ez-9J-4is" secondAttribute="top" constant="10" id="egu-c0-TM1"/>
                     <constraint firstItem="3ez-9J-4is" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="g7O-eF-Oxz"/>
                     <constraint firstItem="qnk-4f-JFz" firstAttribute="trailing" secondItem="3ez-9J-4is" secondAttribute="trailing" constant="-10" id="hDj-Jh-QUC"/>
                     <constraint firstItem="6pQ-gF-SDN" firstAttribute="leading" secondItem="3ez-9J-4is" secondAttribute="leading" id="mK4-Iy-ch5"/>
@@ -83,13 +98,16 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="imageButton" destination="6pQ-gF-SDN" id="mJJ-tS-bYc"/>
                 <outlet property="quoteImageView" destination="3ez-9J-4is" id="cbz-jn-g8t"/>
                 <outlet property="quoteLabel" destination="qnk-4f-JFz" id="VaF-OB-1sg"/>
+                <outlet property="saveButton" destination="TUf-Pp-pfy" id="sHT-xf-6zg"/>
             </connections>
             <point key="canvasLocation" x="-166.41221374045801" y="59.154929577464792"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="QuoteBackground" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
     </resources>
 </document>

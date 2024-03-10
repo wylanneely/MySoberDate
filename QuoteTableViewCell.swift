@@ -8,15 +8,25 @@
 import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
+    
+    let quoteController = QuoteController()
 
     let quotes = Quotes()
     var quoteId: Int = 0
+    
+    var isSaved: Bool = false
+    
+    var favoriteQuote: Quote?
     
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUp()
+        if let faveQuote = favoriteQuote {
+            setUp(savedQuote: faveQuote)
+        } else {
+            setUp()
+        }
     }
     
     func setUp(){
@@ -53,10 +63,16 @@ class QuoteTableViewCell: UITableViewCell {
         }
     }
     
-    func setUp(quote:Quote){
-        quoteImageView.image = quote.image
-        quoteLabel.text = "'\(quote.quote)'"
-       // authorLabel.text = "- \(quote.author)"
+    func setUp(savedQuote:Quote){
+        
+        quoteImageView.image = savedQuote.image
+        imageButton.isEnabled = false
+        imageButton.isHidden = true
+        let q = savedQuote.quote
+        let a = savedQuote.author
+        let text = "\(q) \n- \(a)"
+        
+        quoteLabel.text? = text
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -67,11 +83,26 @@ class QuoteTableViewCell: UITableViewCell {
     
     @IBAction func imageTapped(_ sender: Any) {
         changeImage()
+            isSaved = false
+        saveButton.tintColor = UIColor.lightGray
+        
+    }
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        if isSaved {
+            saveButton.tintColor = UIColor.lightGray
+            isSaved = !isSaved
+            quoteController.removeQuote()
+        } else {
+            saveButton.tintColor = UIColor(named: "saveBlue")
+            isSaved = !isSaved
+            quoteController.store(quoteInt: quoteId)
+        }
     }
     
     
     
-    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var quoteImageView: UIImageView!
     @IBOutlet weak var quoteLabel: UILabel!
     
