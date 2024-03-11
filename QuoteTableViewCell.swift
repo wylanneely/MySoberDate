@@ -36,12 +36,39 @@ class QuoteTableViewCell: UITableViewCell {
     
     func setUp(){
         if quoteId < (quotes.quotes.count - 1) {
-            let quoteObj = quotes.quotes[quoteId]
-            quoteImageView.image = quoteObj.image
-            let q = quoteObj.quote
-            let a = quoteObj.author
-            let text = "\(q) \n- \(a)"
-            quoteLabel.text? = text
+            if quoteController.doesQuotesContain(id: quoteId) {
+                let quoteObj = quotes.quotes[quoteId]
+                quoteImageView.image = quoteObj.image
+                let q = quoteObj.quote
+                let a = quoteObj.author
+                let text = "\(q) \n- \(a)"
+                let attributedString = NSMutableAttributedString(string: quoteLabel.text ?? "")
+                if let textRange = attributedString.string.range(of: quoteLabel.text ?? "") {
+                    let nsRange = NSRange(textRange, in: attributedString.string)
+                    let grayColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.55)
+                    attributedString.addAttribute(NSAttributedString.Key.backgroundColor, value: grayColor, range: nsRange )
+                    quoteLabel.attributedText = attributedString
+                }
+                quoteLabel.text? = text
+                saveButton.isHidden = true
+            } else {
+                let quoteObj = quotes.quotes[quoteId]
+                quoteImageView.image = quoteObj.image
+                let q = quoteObj.quote
+                let a = quoteObj.author
+                let text = "\(q) \n- \(a)"
+                quoteLabel.text? = text
+                saveButton.isHidden = false
+                saveButton.isEnabled = true
+                saveButton.tintColor = UIColor.lightGray
+                let attributedString = NSMutableAttributedString(string: quoteLabel.text ?? "")
+                if let textRange = attributedString.string.range(of: quoteLabel.text ?? "") {
+                    let nsRange = NSRange(textRange, in: attributedString.string)
+                    let grayColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.55)
+                    attributedString.addAttribute(NSAttributedString.Key.backgroundColor, value: grayColor, range: nsRange )
+                    quoteLabel.attributedText = attributedString
+                }
+            }
         } else {
             soberController.registger(id: 0)
         }
@@ -73,6 +100,8 @@ class QuoteTableViewCell: UITableViewCell {
     }
     
     func setUp(savedQuote:Quote){
+        
+        
         
         quoteImageView.image = savedQuote.image
         imageButton.isEnabled = false
