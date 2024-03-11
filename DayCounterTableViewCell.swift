@@ -24,6 +24,7 @@ class DayCounterTableViewCell: UITableViewCell {
     
     func setUpLabels(){
         if let soberData = soberData {
+            settingsArrow.isHidden = true
             timeLabel.text = "\(soberData.soberDate.calculateYearMonthDay())"
         }
         
@@ -63,5 +64,6 @@ class DayCounterTableViewCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var settingsArrow: UIImageView!
     
 }
