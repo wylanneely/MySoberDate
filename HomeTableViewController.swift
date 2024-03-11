@@ -23,15 +23,24 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        controller.registerLastSigninDay()
         soberData = controller.getSoberData()
         if let soberData {
             soberDateLabel.text = "Sober \(soberData.returnFormattedDate())"
         }
+        if controller.isNewDay() {
+            let newid = controller.quoteId + 1
+            controller.registger(id: newid)
+        } else {
+            
+        }
+        
         setUpTableView()
         fetchData()
     }
     //too help reload app when entering
     @objc func reload(){
+        controller.registerLastSigninDay()
         self.viewDidLoad()
     }
     
@@ -39,7 +48,6 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         self.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector:#selector(self.reload), name: UIApplication.willEnterForegroundNotification, object: UIApplication.shared)
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {

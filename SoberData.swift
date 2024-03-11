@@ -45,6 +45,18 @@ class SoberController {
     var soberData: SoberData?
     var quoteId: Int = 0
     
+    init() {
+        if let idExists = UserDefaults.standard.object(forKey: keylastQuoteID) as? Int {
+            self.quoteId = idExists
+        }
+    }
+    
+    func updateQuoteID(){
+        if let newID = UserDefaults.standard.object(forKey: keylastQuoteID) as? Int {
+            self.quoteId = newID
+        }
+    }
+    
     func store(soberData: SoberData){
         self.soberData = soberData
         UserDefaults.standard.setValue(soberData.soberDate, forKey: keySoberDate)
@@ -67,15 +79,14 @@ class SoberController {
     
     func isNewDay()-> Bool {
         if let lastSingin = UserDefaults.standard.object(forKey: keyLastSignInDay) as? String {
-            if lastSingin == Date().dateToDayString() {
+          //  let testDay = Date().makeDate(year: 2023, month: 02, day: 3, hr: 0, min: 0, sec: 0)
+            if lastSingin == Date().asDateString {
+                registerLastSigninDay()
                 return false
             } else {
-                quoteId = quoteId + 1
-                registerLastSigninDay()
                 return true
             }
         }
-        quoteId = quoteId + 1
         registerLastSigninDay()
         return true
     }
@@ -88,9 +99,16 @@ class SoberController {
         }
     }
     
-    private func registerTodaysQuoteID(){
+    func registerTodaysQuoteID(){
         UserDefaults.standard.setValue(quoteId, forKey: keylastQuoteID)
     }
+    
+    func registger(id: Int) {
+        UserDefaults.standard.setValue(id, forKey: keylastQuoteID)
+
+    }
+    
+
     
     
     //MARK: Keys

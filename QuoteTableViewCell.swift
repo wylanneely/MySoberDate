@@ -10,9 +10,12 @@ import UIKit
 class QuoteTableViewCell: UITableViewCell {
     
     let quoteController = QuoteController()
+    let soberController = SoberController()
 
     let quotes = Quotes()
-    var quoteId: Int = 0
+    var quoteId: Int {
+        return soberController.quoteId
+    }
     
     var isSaved: Bool = false
     
@@ -22,6 +25,8 @@ class QuoteTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        imageButton.isHidden = true
+        saveButton.imageView?.contentMode = .scaleAspectFit
         if let faveQuote = favoriteQuote {
             setUp(savedQuote: faveQuote)
         } else {
@@ -30,20 +35,24 @@ class QuoteTableViewCell: UITableViewCell {
     }
     
     func setUp(){
-        let quoteObj = quotes.quotes.first!
-        quoteImageView.image = quoteObj.image
-        let q = quoteObj.quote
-        let a = quoteObj.author
-        let text = "\(q) \n- \(a)"
-        quoteLabel.text? = text
+        if quoteId < (quotes.quotes.count - 1) {
+            let quoteObj = quotes.quotes[quoteId]
+            quoteImageView.image = quoteObj.image
+            let q = quoteObj.quote
+            let a = quoteObj.author
+            let text = "\(q) \n- \(a)"
+            quoteLabel.text? = text
+        } else {
+            soberController.registger(id: 0)
+        }
     }
     
     func changeImage(){
         mediumImpact.impactOccurred()
         if quoteId == (quotes.quotes.count - 1) {
-            quoteId = 0
+        //    quoteId = 0
         } else {
-            quoteId = quoteId + 1
+          //  quoteId = quoteId + 1
         }
         let quoteObj = quotes.quotes[quoteId]
         quoteImageView.image = quoteObj.image
@@ -73,6 +82,13 @@ class QuoteTableViewCell: UITableViewCell {
         let text = "\(q) \n- \(a)"
         
         quoteLabel.text? = text
+        let attributedString = NSMutableAttributedString(string: quoteLabel.text ?? "")
+        if let textRange = attributedString.string.range(of: quoteLabel.text ?? "") {
+            let nsRange = NSRange(textRange, in: attributedString.string)
+            let grayColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.55)
+            attributedString.addAttribute(NSAttributedString.Key.backgroundColor, value: grayColor, range: nsRange )
+            quoteLabel.attributedText = attributedString
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -85,8 +101,9 @@ class QuoteTableViewCell: UITableViewCell {
         changeImage()
             isSaved = false
         saveButton.tintColor = UIColor.lightGray
-        
     }
+    
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         if isSaved {
             saveButton.tintColor = UIColor.lightGray
