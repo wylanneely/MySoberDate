@@ -109,7 +109,48 @@ extension Date {
             return "error"
         }
     }
+    func calculateFullSober()->String {
+        let difference = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: self, to: Date())
+        
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [ .year,.month,.day,.hour,.minute]
+
+        formatter.unitsStyle = .short
+        if let soberHours = formatter.string(from: difference) {
+            return soberHours
+        } else {
+            return "error"
+        }
+    }
+    
+    func dateToDayString()->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dayString = dateFormatter.string(from: self)
+        return dayString
+    }
+    
+}
+
+extension String {
+    
+    func dateToDayString(date: Date)->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dayString = dateFormatter.string(from: date)
+            return dayString
+    }
     
     
+    var formattedDate: String? {
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZZ"
+           if let date = dateFormatter.date(from: self) {
+               print(date)
+               dateFormatter.dateFormat = "yyyy-MM-dd"
+               return dateFormatter.string(from: date)
+           }
+           return nil
+       }
     
 }
