@@ -20,7 +20,8 @@ class SoberData {
     
     func returnFormattedDate()-> String {
         let df = DateFormatter()
-        df.dateFormat = "dd/MM/yyyy HH:mm"
+        df.dateStyle = .medium
+        df.timeStyle = .none
         return df.string(from: self.soberDate)
     }
     
@@ -42,6 +43,7 @@ class SoberData {
 class SoberController {
     
     var soberData: SoberData?
+    var quoteId: Int = 0
     
     func store(soberData: SoberData){
         self.soberData = soberData
@@ -56,11 +58,46 @@ class SoberController {
         let sData = SoberData(soberDate: soberDate, dailyDollarAmount: dollarAmount)
         return sData
     }
+    
+    func registerLastSigninDay(){
+        if let today = Date().asDateString {
+            UserDefaults.standard.setValue(today, forKey: keyLastSignInDay)
+        }
+    }
+    
+    func isNewDay()-> Bool {
+        if let lastSingin = UserDefaults.standard.object(forKey: keyLastSignInDay) as? String {
+            if lastSingin == Date().dateToDayString() {
+                return false
+            } else {
+                quoteId = quoteId + 1
+                registerLastSigninDay()
+                return true
+            }
+        }
+        quoteId = quoteId + 1
+        registerLastSigninDay()
+        return true
+    }
+    
+    func getTodaysQuoteID()->Int{
+        if let id = UserDefaults.standard.object(forKey: keylastQuoteID) as? Int {
+            return id
+        } else {
+            return quoteId
+        }
+    }
+    
+    private func registerTodaysQuoteID(){
+        UserDefaults.standard.setValue(quoteId, forKey: keylastQuoteID)
+    }
+    
+    
     //MARK: Keys
-    
-    
-    let keySoberDate: String = "SoberDate"
-    let keyDollarAmount: String = "DollarAmount"
+   private let keyLastSignInDay: String = "signInDay"
+   private let keylastQuoteID: String = "lastQuoteID"
+   private let keySoberDate: String = "SoberDate"
+   private let keyDollarAmount: String = "DollarAmount"
     
 }
 
