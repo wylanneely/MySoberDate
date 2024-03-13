@@ -170,6 +170,7 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func reloadTableView() {
+        self.viewDidLoad()
         tableView.reloadData()
     }
     
