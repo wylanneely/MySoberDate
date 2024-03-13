@@ -40,7 +40,7 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     //too help reload app when entering
     @objc func reload(){
-        controller.registerLastSigninDay()
+       // controller.registerLastSigninDay()
         self.viewDidLoad()
     }
     

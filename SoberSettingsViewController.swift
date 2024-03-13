@@ -58,6 +58,7 @@ class SoberSettingsViewController: UIViewController {
     
     
     func setUpDatePicker(){
+        soberDatePicker.setValue(UIColor(.white), forKeyPath: "textColor")
         soberDatePicker.tintColor = UIColor(.white)
         soberDatePicker.maximumDate = Date()
     }
@@ -128,6 +129,7 @@ class SoberSettingsViewController: UIViewController {
         self.mediumImpact.impactOccurred()
         saveUpdateButton.isHidden = true
         buttomImageView.isHidden = true
+        self.dismiss(animated: true)
         delegate?.reloadTableView()
     }
     
