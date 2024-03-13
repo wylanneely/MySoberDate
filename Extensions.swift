@@ -20,6 +20,13 @@ extension Calendar {
 }
 
 extension Date {
+    
+    func makeDate(year: Int, month: Int, day: Int, hr: Int, min: Int, sec: Int) -> Date {
+        var calendar = Calendar(identifier: .gregorian)
+        // calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let components = DateComponents(year: year, month: month, day: day, hour: hr, minute: min, second: sec)
+        return calendar.date(from: components)!
+    }
 
     var onlyDate: Date? {
         get {
@@ -114,8 +121,8 @@ extension Date {
         
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [ .year,.month,.day,.hour,.minute]
-
-        formatter.unitsStyle = .short
+        formatter.unitsStyle = .brief
+        
         if let soberHours = formatter.string(from: difference) {
             return soberHours
         } else {
