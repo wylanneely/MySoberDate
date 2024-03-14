@@ -74,7 +74,7 @@ class SoberController {
     }
     
     func registerLastSigninDay(){
-        //let testDay = Date().makeDate(year: 2023, month: 02, day: 3, hr: 0, min: 0, sec: 0)
+      //  let testDay = Date().makeDate(year: 2023, month: 02, day: 3, hr: 0, min: 0, sec: 0)
         if let today = Date().asDateString {
             UserDefaults.standard.setValue(today, forKey: keyLastSignInDay)
         }
@@ -82,7 +82,7 @@ class SoberController {
     
     func isNewDay()-> Bool {
         if let lastSingin = UserDefaults.standard.object(forKey: keyLastSignInDay) as? String {
-        //   let testDay = Date().makeDate(year: 2023, month: 02, day: 3, hr: 0, min: 0, sec: 0)
+         //  let testDay = Date().makeDate(year: 2023, month: 02, day: 3, hr: 0, min: 0, sec: 0)
             if lastSingin == Date().asDateString {
                 registerLastSigninDay()
                 return false
