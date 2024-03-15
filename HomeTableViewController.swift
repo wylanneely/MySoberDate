@@ -29,18 +29,19 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
             soberDateLabel.text = "Sober \(soberData.returnFormattedDate())"
         }
         if controller.isNewDay() {
-//            let newid = controller.quoteId + 1
-//            controller.registger(id: newid)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         } else {
-            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
-        
         setUpTableView()
         fetchData()
     }
     //too help reload app when entering
     @objc func reload(){
-       // controller.registerLastSigninDay()
         self.viewDidLoad()
     }
     
@@ -161,12 +162,48 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     //MARK: - Delegate
     
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+
+    
     func saveGratefulNoteButtonTapped(note: GratefulNote) {
         
-        self.note = note
-        self.isGratefulToday = true
-        self.service.save(gratefulNote: note)
-        tableView.reloadData()
+        let alert = UIAlertController(title: "Add", message: "Are you sure you would like to add to Journal?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Erase", style: .destructive, handler: { action in
+            switch action.style{
+                case .default:
+                print("default")
+                case .cancel:
+                print("cancel")
+                case .destructive:
+                self.tableView.reloadData()
+                self.mediumImpact.impactOccurred()
+                return
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
+            switch action.style{
+                case .default:
+                self.mediumImpact.impactOccurred()
+                self.note = note
+                self.isGratefulToday = true
+                self.service.save(gratefulNote: note)
+                    self.tableView.reloadData()
+                return
+                case .cancel:
+                print("cancel")
+                case .destructive:
+                print("desctuctive")
+
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+//        
+//        mediumImpact.impactOccurred()
+//        self.note = note
+//        self.isGratefulToday = true
+//        self.service.save(gratefulNote: note)
+//        tableView.reloadData()
     }
     
     func reloadTableView() {
@@ -180,16 +217,6 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         if let vc = segue.destination as? SoberSettingsViewController {
             vc.delegate = self
         }
-        
     }
-        /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
