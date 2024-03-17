@@ -40,7 +40,6 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         setUpTableView()
         fetchData()
     }
-    //too help reload app when entering
     @objc func reload(){
         self.viewDidLoad()
     }
@@ -198,12 +197,6 @@ class HomeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }))
         
         self.present(alert, animated: true, completion: nil)
-//        
-//        mediumImpact.impactOccurred()
-//        self.note = note
-//        self.isGratefulToday = true
-//        self.service.save(gratefulNote: note)
-//        tableView.reloadData()
     }
     
     func reloadTableView() {
