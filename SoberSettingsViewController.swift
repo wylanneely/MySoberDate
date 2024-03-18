@@ -47,8 +47,6 @@ class SoberSettingsViewController: UIViewController {
             soberDatePicker.date = displayDate
             soberDateLabel.text = dformatter.string(from: displayDate)
         }
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,12 +61,10 @@ class SoberSettingsViewController: UIViewController {
         soberDatePicker.maximumDate = Date()
     }
     
-    
-    
-    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
     //MARK: - Outlets
     @IBOutlet weak var soberDateLabel: UILabel!
     @IBOutlet weak var soberDatePicker: UIDatePicker!
@@ -139,8 +135,6 @@ class SoberSettingsViewController: UIViewController {
         return SoberData(soberDate: soberDate, dailyDollarAmount: dollarAmount)
     }
     
-    
-    
     func getDollarIntFromTextfield()->Int{
         guard let dollar = Int(dailyDollarTextField.text ?? "0") else {
             return 0
@@ -153,7 +147,6 @@ class SoberSettingsViewController: UIViewController {
         if let vc = segue.destination as? HomeTableViewController {
             vc.soberData = soberData
         }
-        
     }
     
     
