@@ -27,18 +27,13 @@ class DayCounterTableViewCell: UITableViewCell {
             settingsArrow.isHidden = true
             timeLabel.text = "\(soberData.soberDate.calculateYearMonthDay())"
         }
-        
     }
     
-    
     @IBAction func imageTapped(_ sender: Any) {
-        
         if let soberData = soberData {
             mediumImpact.impactOccurred()
             returnSwitchTimeType()
         }
-        
-        
     }
     
     
@@ -63,7 +58,6 @@ class DayCounterTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var timeLabel: UILabel!
-    
     @IBOutlet weak var settingsArrow: UIImageView!
     
 }
